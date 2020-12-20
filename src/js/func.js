@@ -1,11 +1,33 @@
-/***
- 等到结果出现在可以识别的区域后开始执行
- for 单押路数
- 执行前判断是否可以下注
- for 单押路数
-
- ***/
-
+/**
+ *                     .::::.
+ *                   .::::::::.
+ *                  :::::::::::    佛主保佑、永无Bug
+ *              ..:::::::::::'
+ *            '::::::::::::'
+ *              .::::::::::
+ *         '::::::::::::::..
+ *              ..::::::::::::.
+ *            ``::::::::::::::::
+ *             ::::``:::::::::'        .:::.
+ *            ::::'   ':::::'       .::::::::.
+ *          .::::'      ::::     .:::::::'::::.
+ *         .:::'       :::::  .:::::::::' ':::::.
+ *        .::'        :::::.:::::::::'      ':::::.
+ *       .::'         ::::::::::::::'         ``::::.
+ *   ...:::           ::::::::::::'              ``::.
+ *  ```` ':.          ':::::::::'                  ::::..
+ *                     '.:::::'                    ':'````..
+ **************************************************************************
+ * Created with IntelliJ IDEA.
+ * @Version: EasyClick 5.13.0 js
+ * @PROJECT_NAME: fyyl
+ * @Description: 功能模块
+ * @Author: 青稞
+ * @QQ: 394684614@qq.com
+ * @Date: 2020-12-15 19:33:21
+ * @LastEditors: 青稞
+ * @LastEditTime: 2020-12-21 07:52:21
+ */
 
 let doubleBet = readConfigString("doubleBet"); //双押
 let singleDeposit = readConfigString("singleDeposit") //单押
@@ -115,8 +137,10 @@ function threeConsecutive(num) {
                 threeTimes = 1;
                 testMsg("不一样归 " + threeTimes)
             }
+            // logd(threeTimes + "连")
             if (threeTimes >= num){
                 testMsg("返回时 " + threeTimes)
+                // logd(threeTimes + "连 >=" + num + "返回去下注了")
                 return true;
             }
             // bettingTime();
@@ -238,7 +262,7 @@ function whetherToWin(sum, whatSNext) {
                 //如果连负>=设置的连负最大值
                 //此时出现和也返回没中
                 threeConsecutive(continuous)
-                canIBetAgain();
+                // canIBetAgain();
                 let res = trend();
                 whetherToWin(sum,res);
             }else{
@@ -572,7 +596,7 @@ function _amountCombination(num) {
 
     // 2,5,12,27,57,120,252,490,1040,2100
 
-    let cars = new Array()
+    let cars = []
 
     switch (num) {
         case 1:
